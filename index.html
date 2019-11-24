@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>埔里食物推薦</title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="materialize/css/materialize.min.css">
+  <link rel="stylesheet" href="fontawesome/css/all.css">
+  <style>
+    @media only screen and (min-width : 992px) {
+      .sidenav {
+        top: 65px;
+      }
+    }
+
+    @media only screen and (min-width : 992px) {
+      main {
+        padding-left: 150px;
+      }
+    }
+
+    .comment {
+      width: 100%;
+      margin-top: 50px
+    }
+
+    label {
+      font-size: large !important;
+    }
+
+    a,
+    title,
+    p,
+    span,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    button,
+    th,
+    td,
+    label,
+    input,
+    select,
+    textarea {
+      font-family: 'Noto Sans TC', sans-serif !important;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="navbar-fixed">
+      <nav class="light-green">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo center hide-on-small-only"><i class="fas fa-utensils"></i> 埔里食物推薦</a>
+          <a href="#" class="brand-logo center hide-on-med-and-up">食物推薦</a>
+          <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+        </div>
+      </nav>
+    </div>
+    <ul id="mobile-nav" class="sidenav sidenav-fixed collapsible grey lighten-5">
+      <li>
+        <div class="collapsible-header">火鍋</div>
+        <div class="collapsible-body">
+          <ul>
+            <li>
+              <a href="#">石二鍋_埔里家樂福店</a>
+            </li>
+            <li>
+              <a href="#">鬲饕火鍋店</a>
+            </li>
+            <li>
+              <a href="#">辣典麻辣鍋</a>
+            </li>
+            <li>
+              <a href="#">小鼎火鍋</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">牛排</div>
+        <div class="collapsible-body">
+          <ul>
+            <li>
+              <a href="#">玖玖牛排美食館</a>
+            </li>
+            <li>
+              <a href="#">食通牛排</a>
+            </li>
+            <li>
+              <a href="#">TGB很牛炭燒牛排 埔里店</a>
+            </li>
+            <li>
+              <a href="#">成功牛排 埔里店</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">早餐</div>
+        <div class="collapsible-body">
+          <ul>
+            <li>
+              <a href="#">埔里清寶鹹油條總店</a>
+            </li>
+            <li>
+              <a href="#">江媽媽筒仔米糕菜頭粿</a>
+            </li>
+            <li>
+              <a href="#">米饅頭</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </header>
+  <main class="container row">
+    <div>
+      <ul id="slide-out" class="sidenav collapsible grey lighten-5">
+        <li>
+          <div class="collapsible-header">火鍋</div>
+          <div class="collapsible-body">
+            <ul>
+              <li>
+                <a href="#">石二鍋_埔里家樂福店</a>
+              </li>
+              <li>
+                <a href="#">鬲饕火鍋店</a>
+              </li>
+              <li>
+                <a href="#">辣典麻辣鍋</a>
+              </li>
+              <li>
+                <a href="#">小鼎火鍋</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="collapsible-header">牛排</div>
+          <div class="collapsible-body">
+            <ul>
+              <li>
+                <a href="#">玖玖牛排美食館</a>
+              </li>
+              <li>
+                <a href="#">食通牛排</a>
+              </li>
+              <li>
+                <a href="#">TGB很牛炭燒牛排 埔里店</a>
+              </li>
+              <li>
+                <a href="#">成功牛排 埔里店</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="collapsible-header">早餐</div>
+          <div class="collapsible-body">
+            <ul>
+              <li>
+                <a href="#">埔里清寶鹹油條總店</a>
+              </li>
+              <li>
+                <a href="#">江媽媽筒仔米糕菜頭粿</a>
+              </li>
+              <li>
+                <a href="#">米饅頭</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <section class="col xl6 s12 row center">
+      <div class="col s12">
+        <h2><i class="fas fa-store"></i>鬲饕火鍋店</h2>
+      </div>
+      <div class="col s12">
+        <h3><i class="fas fa-map-marker"></i> 地址：</h3>
+        <h4>
+          <a href="https://www.google.com/maps/search/?api=1&query=545南投縣埔里鎮中正路511號">
+            545南投縣埔里鎮中正路511號
+          </a>
+        </h4>
+      </div>
+      <div class="col s12">
+        <h3><i class="fas fa-phone"></i> 電話：</h3>
+        <h4>
+          <a href="tel:+886-49-299-8838">
+            0492998838
+          </a>
+        </h4>
+      </div>
+      <div class="col s12">
+        <h3><i class="fas fa-clock"></i> 時間：</h3>
+        <h4>
+          11:30–14:30 17:00–23:00（週一中午不營業）
+        </h4>
+      </div>
+    </section>
+    <section class="col xl6 s12 row">
+      <form method="post col s12">
+        <div class="col s12">
+          <h3 class="center"><i class="fas fa-pen"></i> 修改建議</h3>
+        </div>
+        <div class="input-field col s12">
+          <i class="fas fa-user prefix"></i>
+          <input id="name" type="text" class="validate">
+          <label for="name">稱呼</label>
+        </div>
+        <div class="input-field col s12">
+          <i class="fas fa-user prefix"></i>
+          <input id="email" type="email" class="validate" onchange="checkemail()">
+          <label for="email">電子信箱</label>
+          <span class="helper-text" id="email-check" style="display: none;" data-error="錯誤" data-success="正確">正確性</span>
+        </div>
+        <div class="input-field col s12">
+          <select>
+            <option value="none" disabled selected>請選擇</option>
+            <option value="error">錯誤更正</option>
+            <option value="context">內容建議</option>
+            <option value="other">其他</option>
+          </select>
+          <label>建議類型</label>
+        </div>
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <label for="textarea1">你的意見</label>
+        </div>
+        <div class="col s6 offset-s3 center">
+          <button class="btn-large" type="submit">提交 <i class="fas fa-paper-plane"></i></button>
+        </div>
+      </form>
+      <div class="col s6 center">
+        <button data-target="viewComments" class="modal-trigger btn-large comment">觀看留言</button>
+      </div>
+      <div class="col s6 center">
+        <button data-target="writeComment" class="modal-trigger btn-large comment">撰寫留言</button>
+      </div>
+    </section>
+  </main>
+  <div id="writeComment" class="modal">
+    <div class="modal-content">
+      <form class="row" method="post">
+        <div class="col s12">
+          <h3 class="center"><i class="far fa-comment-alt"></i> 留言</h3>
+        </div>
+        <div class="input-field col s12">
+          <i class="fas fa-user prefix"></i>
+          <input id="cname" type="text" class="validate">
+          <label for="cname">稱呼</label>
+        </div>
+        <div class="input-field col s12">
+          <i class="fas fa-greater-than-equal prefix"></i>
+          <input id="title" type="text" class="validate">
+          <label for="title">標題</label>
+        </div>
+        <div class="range-field col s12">
+          <label for="grade">評分</label>
+          <input type="range" id="grade" min="0" max="10" value="5">
+        </div>
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <label for="textarea1">你的留言</label>
+        </div>
+        <div class="col s6 offset-s3 center">
+          <button class="btn-large" type="submit">提交 <i class="fas fa-paper-plane"></i></button>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="modal-close waves-effect waves-green btn-flat"><i class="fas fa-times"></i></a>
+    </div>
+  </div>
+  <div id="viewComments" class="modal bottom-sheet">
+    <div class="modal-content ">
+      <h5 class="center"><i class="far fa-star"></i> 總分： 6.6 / 10</h5>
+      <ul class="collection">
+        <li class="collection-item avatar">
+          <i class="fas fa-user-circle circle"></i>
+          <span class="title">部科後生然假然</span>
+          <p>
+            收軍一作的升素怎身病的的息：著一病我是過實長業里校案有主開中果證時的量身取館分的保可，高許蘭活。
+            開各連人負正到成開石四，有成說經靜考民獲媽常，新飛定難上認條人以錢，最業的試香兩見通務黨一主車重
+            陽有方不十以比觀研的媽酒他本其亞的義年半。
+          </p>
+          <span class="secondary-content"><i class="fas fa-star"></i> 8</span>
+        </li>
+        <li class="collection-item avatar">
+          <i class="fas fa-user-circle circle"></i>
+          <span class="title">好市初日收使異真進司</span>
+          <p>
+            然明一連大色發壓聲較家；長有費然得？
+            是力較動術面。多問人言車多我是好院是園政見起世無……很中的！有臺一信到作出李的內笑反南李為會發笑，
+            選文的，法人識小氣自情究的他：外成對花同顧交：度種他素心？當人花進個型過時空生的推酒老期行，它
+            不在人回關那一五的我花水此？
+          </p>
+          <span class="secondary-content"><i class="fas fa-star"></i> 6</span>
+        </li>
+        <li class="collection-item avatar">
+          <i class="fas fa-user-circle circle"></i>
+          <span class="title">以寶得電士取案個能高任那</span>
+          <p>
+            運何力朋足；學花打利種多業五規的好西深黨。此水應有長行作現據，你裡沒小中！明勢腦作山有人滿！
+            好傳主。神用又舞止象天夠滿府打洲學、有來景使！媽戲中月一該國；致大境？每白林廠像動策那，果邊我真，
+            情在高天一遠一速一驚富說職跟活不打水人前陸國出理接力對這？們絕很必。
+          </p>
+          <span class="secondary-content"><i class="fas fa-star"></i> 7</span>
+        </li>
+        <li class="collection-item avatar">
+          <i class="fas fa-user-circle circle"></i>
+          <span class="title">出的紀事很是學少嚴分片們</span>
+          <p>
+            知部便看廣看？常放並我我首一醫初之我時因！已讓制是斯然，興標子西一你在家對站不氣情門真們料方一輕。
+            用長就可，達開不類。因經樂單舉美場然不了從不西那；生麼反心比族要類為重的亞算制有入全他求等地一像
+            當財發與靈見，園會爾意，示什子低領目電風事費。
+          </p>
+          <span class="secondary-content"><i class="fas fa-star"></i> 8</span>
+        </li>
+        <li class="collection-item avatar">
+          <i class="fas fa-user-circle circle"></i>
+          <span class="title">望再師重中候演方境</span>
+          <p>
+            時筆知點說電也子；百著出靜質是片動師線間學備我用遊我果，業世麼於參氣你入念備時。
+            中葉了語子日城識學調。政北整模字部地取且信給念股動對久……飯流麼到然入會我失如製心多站遊不光境。
+            無決市、空房眼這這全改。
+            成愛小文適邊線笑哥流從議高斷，存一是一國只見美，一內說西，來因性先分綠家……而是位更道曾上且或面大數所意三！
+            多對哥期設。父回時飛，現當構、戰可了這們看友但古紀民當造排備自富己的顯幾評臺是不要的兒老目……破不己修筆飛紙想總！
+            報從友我們不題母自民臉因的；實夫後面的，現德校書斷熱利高動。全她年，量神益四風加。樂像會到歌易的天破調示一資得知天問光用一、
+            今工回弟始錢西造媽；自日事兒我系車書作。萬最中，四不美好工知花邊我星大力於許務，
+            我中異達！年進來集我可成球、興未難。廣常活政線。內希講業紀方歡全她生新關工了推！
+            學越我的二然來長年花現想火走很過的。
+          </p>
+          <span class="secondary-content"><i class="fas fa-star"></i> 8</span>
+        </li>
+        <li class="collection-item avatar">
+          <i class="fas fa-user-circle circle"></i>
+          <span class="title">起人到強色沒了簡熱有</span>
+          <p>
+            這題母場後有溫孩形小回資的展一不空許智出了際草，壓自產是我在心說生德望不這工不：上而言而，師著火
+            ，我的可前機高至議起房覺教報時育心候天港。
+            但片因馬快她色？起的山人直人只；軍者不物緊出收洋家，真化學位園收，都證下病包立風無媽險，
+            失委品人情到才動半長院遠一當們，善見福？位光法司間支來似屋似結晚；一力們日主各油。一水高觀
+            的的先用美指眼談持表二有組銷一陽黃片，華看的園一的此進水天他車了裡是在公他在頭高的球進工。
+            關一部它，他育它的，人的因果觀後生食習市放到廣。
+            利形不日民味生裡樂元度意很則。
+          </p>
+          <span class="secondary-content"><i class="fas fa-star"></i> 4</span>
+        </li>
+        <li class="collection-item avatar">
+          <i class="fas fa-user-circle circle"></i>
+          <span class="title">處出來往動天</span>
+          <p>
+            了境真才一動，險輪心小球兒情決我的那離問民看以事這時密心進己素。
+            然不今教告。因到成！來名怕無再；器土他好對只成重阿深的展論軍氣滿獲一
+            的只民間心產裡運料者供直生在眼通營定法機路如每在際人己話遊續果比集去化笑當許西的要遠水，美法。
+            因我藝想養不不任小！資魚由流局令解字到。念這間人人賽風要治是、生是原……較跟當名的者下值到留去
+            笑己母天人車的呢食下朋玩第情；格那盡了各友生！山區間要期外遠各雜過父為選就買日！管上女是心產是預了，
+            每收文信老需溫滿少子校白日藥東：車有應很者美大食成，的險臺金等本開使不，統無他果語大你。四上我林從次學但果，
+            要集利去朋山果還也者有電議成使。家同取是外。民者地子孩接油上？上孩要！收界兒一？象寶健的，府媽念大大解半
+            根園通情日畫影。賽音夜這如場就程物回。快面推我客是節、古他而保機，急在見水，國不理男交在你。處行經眾轉光下！
+            面境謝影點地看們。那可道青法事作是英是！雜種前業油過、親爸考、做人言兒問下特我不人好上下人，回面卻來會百少當。
+            是家腦要小解開現她想兒然農爸行即，智那離計術大筆本度行感記草帶且他，然在才念減目爸關笑！
+          </p>
+          <span class="secondary-content"><i class="fas fa-star"></i> 8</span>
+        </li>
+      </ul>
+    </div>
+    <div class="center modal-footer" style="text-align: center;">
+      <button class="modal-close waves-effect waves-green btn-flat center">關閉</button>
+    </div>
+  </div>
+  <script src="materialize/js/materialize.min.js"></script>
+  <script>
+    function checkemail() {
+      document.getElementById("email-check").style.display = "";
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      var elem = document.querySelectorAll('.sidenav');
+      var instances = M.Sidenav.init(elem);
+      var elems = document.querySelectorAll('.collapsible');
+      var instances = M.Collapsible.init(elems);
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems);
+      var elems = document.querySelectorAll('.modal');
+      var instances = M.Modal.init(elems);
+    });
+  </script>
+</body>
+
+</html>
