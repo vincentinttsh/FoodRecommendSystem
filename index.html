@@ -210,48 +210,6 @@
     <section class="col xl6 s12 row">
       <form method="post col s12">
         <div class="col s12">
-          <h3 class="center"><i class="fas fa-pen"></i> 修改建議</h3>
-        </div>
-        <div class="input-field col s12">
-          <i class="fas fa-user prefix"></i>
-          <input id="name" type="text" class="validate">
-          <label for="name">稱呼</label>
-        </div>
-        <div class="input-field col s12">
-          <i class="fas fa-user prefix"></i>
-          <input id="email" type="email" class="validate" onchange="checkemail()">
-          <label for="email">電子信箱</label>
-          <span class="helper-text" id="email-check" style="display: none;" data-error="錯誤" data-success="正確">正確性</span>
-        </div>
-        <div class="input-field col s12">
-          <select>
-            <option value="none" disabled selected>請選擇</option>
-            <option value="error">錯誤更正</option>
-            <option value="context">內容建議</option>
-            <option value="other">其他</option>
-          </select>
-          <label>建議類型</label>
-        </div>
-        <div class="input-field col s12">
-          <textarea id="textarea1" class="materialize-textarea"></textarea>
-          <label for="textarea1">你的意見</label>
-        </div>
-        <div class="col s6 offset-s3 center">
-          <button class="btn-large" type="submit">提交 <i class="fas fa-paper-plane"></i></button>
-        </div>
-      </form>
-      <div class="col s6 center">
-        <button data-target="viewComments" class="modal-trigger btn-large comment">觀看留言</button>
-      </div>
-      <div class="col s6 center">
-        <button data-target="writeComment" class="modal-trigger btn-large comment">撰寫留言</button>
-      </div>
-    </section>
-  </main>
-  <div id="writeComment" class="modal">
-    <div class="modal-content">
-      <form class="row" method="post">
-        <div class="col s12">
           <h3 class="center"><i class="far fa-comment-alt"></i> 留言</h3>
         </div>
         <div class="input-field col s12">
@@ -271,6 +229,48 @@
         <div class="input-field col s12">
           <textarea id="textarea1" class="materialize-textarea"></textarea>
           <label for="textarea1">你的留言</label>
+        </div>
+        <div class="col s6 offset-s3 center">
+          <button class="btn-large" type="submit">提交 <i class="fas fa-paper-plane"></i></button>
+        </div>
+      </form>
+      <div class="col s6 center">
+        <button data-target="viewComments" class="modal-trigger btn-large comment">觀看留言</button>
+      </div>
+      <div class="col s6 center">
+        <button data-target="writeComment" class="modal-trigger btn-large comment">修改建議</button>
+      </div>
+    </section>
+  </main>
+  <div id="writeComment" class="modal">
+    <div class="modal-content">
+      <form class="row" method="post">
+        <div class="col s12">
+          <h3 class="center"><i class="fas fa-pen"></i> 修改建議</h3>
+        </div>
+        <div class="input-field col s12">
+          <i class="fas fa-user prefix"></i>
+          <input id="name" type="text" class="validate">
+          <label for="name">稱呼</label>
+        </div>
+        <div class="input-field col s12">
+          <i class="fas fa-envelope prefix"></i>
+          <input id="email" type="email" class="validate" onchange="checkemail()">
+          <label for="email">電子信箱</label>
+          <span class="helper-text" id="email-check" style="display: none;" data-error="錯誤" data-success="正確">正確性</span>
+        </div>
+        <div class="input-field col s12">
+          <select>
+            <option value="none" disabled selected>請選擇</option>
+            <option value="error">錯誤更正</option>
+            <option value="context">內容建議</option>
+            <option value="other">其他</option>
+          </select>
+          <label>建議類型</label>
+        </div>
+        <div class="input-field col s12">
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <label for="textarea1">你的意見</label>
         </div>
         <div class="col s6 offset-s3 center">
           <button class="btn-large" type="submit">提交 <i class="fas fa-paper-plane"></i></button>
