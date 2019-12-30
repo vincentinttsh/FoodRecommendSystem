@@ -19,14 +19,16 @@ class RestaurantInfoView(View):
     def get(self, request, name):
         info = Restaurant.objects.get(name=name)
         comments = CommentField.objects.filter(restaurant=info)
-        score = comments.aggregate(Avg('grade'))
+        score = comments.aggregate(Avg('grade'))['grade__avg']
+        if score is not None:
+            score = round(score, 2)
         categories = Category.objects.all()
         restaurants = Restaurant.objects.all().only('name', 'category')
         print(score)
         return render(request, 'index.html', {
             'info': info,
             'comments': comments,
-            'score': round(score['grade__avg'], 2),
+            'score': score,
             'categories': categories,
             'restaurants': restaurants,
         })
