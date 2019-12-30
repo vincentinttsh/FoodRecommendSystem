@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>埔里食物推薦</title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/materialize/css/materialize.min.css">
+  <link rel="stylesheet" href="/static/fontawesome/css/all.css">
+  <style>
+    @media only screen and (min-width : 992px) {
+      .sidenav {
+        top: 65px;
+      }
+    }
+
+    @media only screen and (min-width : 992px) {
+      #toast-container {
+        left: 50%;
+        right: auto !important;
+      }
+    }
+
+    @media only screen and (min-width : 992px) {
+      main {
+        padding-left: 150px;
+      }
+    }
+
+    .comment {
+      width: 100%;
+      margin-top: 50px
+    }
+
+    label {
+      font-size: large !important;
+    }
+
+    title,
+    p,
+    span,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    button,
+    th,
+    td,
+    label,
+    input,
+    select,
+    textarea {
+      font-family: 'Noto Sans TC', sans-serif !important;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="navbar-fixed">
+      <nav class="light-green">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo center hide-on-small-only"><i class="fas fa-utensils"></i> 埔里食物推薦</a>
+          <a href="#" class="brand-logo center hide-on-med-and-up">食物推薦</a>
+          <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+        </div>
+      </nav>
+    </div>
+    <ul id="mobile-nav" class="sidenav sidenav-fixed collapsible grey lighten-5">
+      {% for category in categories %}
+      <li>
+        <div class="collapsible-header">{{  category.name }}</div>
+        <div class="collapsible-body">
+          <ul>
+            {% for restaurant in restaurants %}
+            {% if restaurant.category.id is category.id %}
+            <li>
+              <a href="/restaurant/{{restaurant.name}}">{{ restaurant.name }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </header>
+  <main class="container row">
+    <div>
+      <ul id="slide-out" class="sidenav collapsible grey lighten-5">
+        {% for category in categories %}
+        <li>
+          <div class="collapsible-header">{{  category.name }}</div>
+          <div class="collapsible-body">
+            <ul>
+              {% for restaurant in restaurants %}
+              {% if restaurant.category.id is category.id %}
+              <li>
+                <a href="/restaurant/{{restaurant.name}}">{{ restaurant.name }}</a>
+              </li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <section class="col xl6 s12 row center">
+      <div class="col s12">
+        <h3><i class="fas fa-store"></i>{{ info.name }}</h3>
+      </div>
+      <div class="col s12">
+        <h4><i class="fas fa-map-marker"></i> 地址：</h4>
+        <h5>
+          <a href="https://www.google.com/maps/search/?api=1&query={{ info.address }}">
+            {{ info.address }}
+          </a>
+        </h5>
+      </div>
+      <div class="col s12">
+        <h4><i class="fas fa-phone"></i> 電話：</h4>
+        <h5>
+          <a href="tel:+886-{{ info.phone }}">
+            {{ info.phone }}
+          </a>
+        </h5>
+      </div>
+      <div class="col s12">
+        <h4><i class="fas fa-clock"></i> 時間：</h4>
+        <h5>
+          {{ info.time }}
+        </h5>
+      </div>
+    </section>
+    <section class="col xl6 s12 row">
+      <form method="post" class="col s12" action="/restaurant/{{info.name}}/">
+        {% csrf_token %}
+        <input type="hidden" name="type" value="comment">
+        <div class="col s12">
+          <h4 class="center"><i class="far fa-comment-alt"></i> 留言</h4>
+        </div>
+        <div class="input-field col s12">
+          <i class="fas fa-user prefix"></i>
+          <input id="cname" type="text" class="validate" name="name">
+          <label for="cname">稱呼</label>
+        </div>
+        <div class="range-field col s12">
+          <label for="grade">評分</label>
+          <input type="range" id="grade" min="0" max="10" value="5" name="grade">
+        </div>
+        <div class="input-field col s12">
+          <textarea id="comment" class="materialize-textarea" name="comment"></textarea>
+          <label for="comment">你的留言</label>
+        </div>
+        <div class="col s12 center">
+          <button class="btn" type="submit">提交 <i class="fas fa-paper-plane"></i></button>
+        </div>
+      </form>
+      <div class="col s6 center">
+        <button data-target="viewComments" class="modal-trigger btn comment">觀看留言</button>
+      </div>
+      <div class="col s6 center">
+        <button data-target="writeSuggest" class="modal-trigger btn comment">修改建議</button>
+      </div>
+    </section>
+  </main>
+  <div id="writeSuggest" class="modal">
+    <div class="modal-content">
+      <form class="row" method="post" action="/restaurant/{{info.name}}/">
+        {% csrf_token %}
+        <input type="hidden" name="type" value="suggestion">
+        <div class="col s12">
+          <h4 class="center"><i class="fas fa-pen"></i> 修改建議</h4>
+        </div>
+        <div class="input-field col s12">
+          <i class="fas fa-user prefix"></i>
+          <input id="name" type="text" class="validate" name="name">
+          <label for="name">稱呼</label>
+        </div>
+        <div class="input-field col s12">
+          <i class="fas fa-envelope prefix"></i>
+          <input id="email" type="email" class="validate" name="email" onchange="checkemail()">
+          <label for="email">電子信箱</label>
+          <span class="helper-text" id="email-check" style="display: none;" data-error="錯誤" data-success="正確">正確性</span>
+        </div>
+        <div class="input-field col s12">
+          <select name="category">
+            <option value="" disabled selected>請選擇</option>
+            <option value="錯誤更正">錯誤更正</option>
+            <option value="內容建議">內容建議</option>
+            <option value="其他">其他</option>
+          </select>
+          <label>建議類型</label>
+        </div>
+        <div class="input-field col s12">
+          <textarea id="comment" class="materialize-textarea" name="comment"></textarea>
+          <label for="comment">你的意見</label>
+        </div>
+        <div class="col s6 offset-s3 center">
+          <button class="btn" type="submit">提交 <i class="fas fa-paper-plane"></i></button>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="modal-close waves-effect waves-green btn-flat"><i class="fas fa-times"></i></a>
+    </div>
+  </div>
+  <div id="viewComments" class="modal bottom-sheet">
+    <div class="modal-content ">
+      <h5 class="center"><i class="far fa-star"></i> 總分： {{ score }} / 10</h5>
+      <ul class="collection">
+        {% for comment in comments %}
+        <li class="collection-item avatar">
+          <i class="fas fa-user-circle circle"></i>
+          <span class="title">{{ comment.name }}</span>
+          <p>
+            {{ comment.comment }}
+          </p>
+          <span class="secondary-content"><i class="fas fa-star"></i> {{ comment.grade }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="center modal-footer" style="text-align: center;">
+      <button class="modal-close waves-effect waves-green btn-flat center">關閉</button>
+    </div>
+  </div>
+  <script src="/static/materialize/js/materialize.min.js"></script>
+  <script>
+    function checkemail() {
+      document.getElementById("email-check").style.display = "";
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      M.AutoInit();
+      {% if post_message %}
+      M.toast({
+        html: '{{ post_message }}',
+        displayLength: 3000,
+        classes: "green darken-4 rounded"
+      })
+      {% endif %}
+    });
+  </script>
+</body>
+
+</html>
